@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: akmactest
+Version: 0.0.4
+Summary: A small example test package
+Home-page: https://github.com/zeronicyber/akmactest
+Author: Arunkumar Muthukumarasamy
+Author-email: zeronicyber@gmail.com
+Project-URL: Bug Tracker, https://github.com/zeronicyber/akmactest/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE

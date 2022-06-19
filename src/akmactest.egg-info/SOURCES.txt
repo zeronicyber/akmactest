@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+src/akmactest.egg-info/PKG-INFO
+src/akmactest.egg-info/SOURCES.txt
+src/akmactest.egg-info/dependency_links.txt
+src/akmactest.egg-info/top_level.txt

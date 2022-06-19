@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "Hi"
+
+if [ $1 = 3 ]
+then
+        echo "Test"
+else
+        echo "fail"
+fi

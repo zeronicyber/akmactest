@@ -1,0 +1,34 @@
+{% set name = "akmactest" %}
+{% set version = "0.1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: f9e2692e1593e89ded124ce896628c3ab9e0f346d863261c0625e5e820af4159
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - pip
+    - python
+  run:
+    - python
+
+about:
+  home: "https://github.com/zeronicyber/akmactest"
+  license: MIT
+  license_family: MIT
+  license_file: 
+  summary: "A small example test package"
+  doc_url: 
+  dev_url: 
+
+extra:
+  recipe-maintainers:
+          - zeronicyber
