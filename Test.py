@@ -1,3 +1,24 @@
+import subprocess
+
+def get_oracle_versions():
+    """
+    Returns a list of Oracle versions installed on the system.
+    """
+    versions = []
+    try:
+        output = subprocess.check_output(['oracleasm', 'listdisks'])
+        output = output.decode('utf-8')
+        for line in output.split('\n'):
+            if 'ORCL' in line:
+                version = line.split('ORCL')[1].strip()
+                versions.append(version)
+    except subprocess.CalledProcessError:
+        # oracleasm command not found or returned an error
+        pass
+    return versions
+
+
+
 import os
 import re
 
