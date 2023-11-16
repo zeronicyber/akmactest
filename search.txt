@@ -1,3 +1,21 @@
+Subject: Conda Environment Issue and Package Version Constraints
+
+Dear [Recipient's Name],
+
+I trust this email finds you well. I am writing to update you on the recent challenges Andrew and I encountered while working on setting up a conda environment.
+
+We successfully created a conda environment with Python-3.6 and R-3.3.2, and initial installations proceeded smoothly. However, we encountered a deadlock situation when attempting to install project-specific packages. Andrew insists on installing packages with specific versions, some of which are only available in the existing conda channel (Repo.anaconda website).
+
+For instance, Andrew is seeking XGboost version 0.60, which is not available in the conda-forge channel. Although we have this version in the R channel, conflicting dependencies hindered the installation. Andrew strongly believes that his models are sensitive to these specific package versions, and using alternative versions may compromise the functionality.
+
+Our working session concluded at this point, as resolving this version conflict became a significant roadblock. We would appreciate any guidance or recommendations you could provide to help us overcome this issue and proceed with our work effectively.
+
+Thank you for your time and assistance.
+
+Best regards,
+[Your Name]
+
+
 Loading channels: ...working... done
 # Name                       Version           Build  Channel             
 bzip2                          1.0.6               0  conda-forge         
