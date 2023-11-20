@@ -1,3 +1,22 @@
+Subject: Assistance Needed: Issue with libreadline-6 on RHEL8 for Conda Environment
+
+Dear [Recipient's Name],
+
+I hope this email finds you well. I am writing to seek assistance regarding an issue I have encountered while setting up the Conda environment on RHEL8.
+
+As mentioned earlier, I successfully replicated Andrew's Conda environment on both RHEL7 and RHEL8 using a backup of existing Conda packages stored in my sandbox. While the Conda environment functions as expected on both platforms, I am facing difficulties with R on RHEL8. The error indicates that libreadline-6 is missing.
+
+To address this, I attempted to install the exact libreadline-6.2 version from the source RPM. However, the installation was unsuccessful, and I received the following error log:
+
+[Insert Error Log Here]
+
+I would appreciate any guidance or recommendations you can provide to resolve this issue. If there are alternative solutions or specific dependencies I need to address, please advise.
+
+Thank you for your time and assistance.
+
+Best regards,
+[Your Name]
+
 Subject: Conda Environment Issue and Package Version Constraints
 
 Dear [Recipient's Name],
