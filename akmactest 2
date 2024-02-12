@@ -1,4 +1,39 @@
-#!/bin/sh
+Subject: Upcoming SAS 9.4 Upgrade Plan
+
+Dear Team,
+
+I hope this email finds you well. I wanted to inform you about the upcoming SAS 9.4 upgrade scheduled for implementation. Below is the plan outline along with specific tasks and actions to be taken:
+
+1. **Communication Email about Change Scheduled:**
+   - An official communication email will be sent out to all stakeholders to notify them about the scheduled change and its implications.
+
+2. **Production Backup:**
+   - Ensure the backup of SYSPSAS physical files on HTF-1/2 using ZFS. No changes are required in the backup process.
+
+3. **Create JCL:**
+   - JCL1: Copy SYSTSAS to SYSTSAS.prod
+     - Example: SYSTSAS.HTF1.BAMISC to SYSTSAS.HTF1.prod.BAMISC
+   - JCL2: Rename SYSTSAS.prod to SYSPSAS
+     - Example: SYSTSAS.HTF1.PROD.BAMISC to SYSPSAS.HTF1.BAMISC
+   - Delete Alias: DEL SYSPSAS
+   - Define Alias: ALIAS SYSPSAS
+
+4. **ZFS File Creations Based on SYSTSAS:**
+   - Run the JCL to create ZFS files based on SYSTSAS.
+
+On the date of implementation:
+   - Run the JCL in the specified order.
+   - MOSE: Set mount points accordingly.
+
+Please review the plan and let me know if you have any questions or concerns. Your cooperation and support are crucial for the success of this upgrade.
+
+Best Regards,
+[Your Name]  
+[Your Position/Title]  
+[Your Contact Information]
+
+
+bin/sh
 
 echo "Hi"
 
