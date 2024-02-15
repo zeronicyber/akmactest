@@ -1,3 +1,28 @@
+Subject: Onboarding Preparation and KT Plan for New Resource
+
+Hi [Recipient's Name],
+
+I hope this email finds you well. Following our recent discussion, I'd like to request your assistance in ensuring that our new resource is fully prepared for their introduction. It's crucial that all audio, video, and technical aspects are in proper working order. If necessary, please conduct a dry run beforehand to iron out any potential issues.
+
+Additionally, I'd appreciate it if you could draft a Knowledge Transfer (KT) plan for the new hire. Here are some key points to consider:
+
+1. **Low-Impact Tasks:** Assign the new resource with low-impact but essential tasks, including:
+   - Updating package lists in GitHub for Jenkins jobs and conducting Black Duck scanning.
+   - Creating change tickets under supervision.
+   - Performing health check processes.
+   - Monitoring Python and R discussion forums and reporting any significant posts to senior associates.
+
+2. **Skill Development:** Encourage the new hire to upskill in programming languages, with a focus on Python and shell scripting. However, they are free to choose any language they prefer.
+
+Please feel free to reach out if you have any questions or require further clarification. Your support in this onboarding process is greatly appreciated.
+
+Thank you,
+
+[Your Name]  
+[Your Position/Role]  
+[Your Contact Information]
+
+
 Loading channels: ...working... done
 # Name                       Version           Build  Channel             
 bzip2                          1.0.6               0  conda-forge         
