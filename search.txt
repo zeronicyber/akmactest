@@ -1,3 +1,36 @@
+
+library(httr)
+
+upload_to_nexus <- function(package_path, nexus_url, nexus_repository) {
+  # Read package binary
+  package_binary <- readBin(package_path, "raw", file.size(package_path))
+  
+  # Create URL for Nexus upload
+  upload_url <- paste0(nexus_url, "/repository/", nexus_repository, "/")
+  
+  # Create multipart request
+  request <- POST(upload_url,
+                  body = list(file = upload_file(package_path)),
+                  encode = "multipart")
+  
+  # Execute request
+  response <- content(request)
+  
+  # Check response
+  if (response$status_code == 201) {
+    cat("Package uploaded successfully.\n")
+  } else {
+    cat("Error uploading package:", response$status_code, "\n")
+  }
+}
+
+# Usage
+package_path <- "path/to/your/package.tar.gz"
+nexus_url <- "http://your-nexus-url.com"
+nexus_repository <- "your-repository-name"
+
+upload_to_nexus(package_path, nexus_url, nexus_repository)
+
 Subject: Assistance Needed: Issue with libreadline-6 on RHEL8 for Conda Environment
 
 Dear [Recipient's Name],
