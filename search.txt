@@ -1,3 +1,54 @@
+library(packrat)
+library(httr)
+
+download_and_upload_to_nexus <- function(package_name, nexus_url, nexus_repository) {
+  # Download package along with dependencies
+  packrat::init(options = list(vcs.ignore.src = TRUE))
+  packrat::install(package_name, dependencies = TRUE)
+  
+  # Get path to downloaded package
+  package_path <- list.files("packrat/src", full.names = TRUE, recursive = TRUE, pattern = paste0("^", package_name, "_"))
+  if (length(package_path) == 0) {
+    cat("Error: Package not found or failed to download.\n")
+    return()
+  }
+  
+  # Upload package to Nexus
+  upload_package_to_nexus(package_path, nexus_url, nexus_repository)
+}
+
+upload_package_to_nexus <- function(package_path, nexus_url, nexus_repository) {
+  # Read package binary
+  package_binary <- readBin(package_path, "raw", file.size(package_path))
+  
+  # Create URL for Nexus upload
+  upload_url <- paste0(nexus_url, "/repository/", nexus_repository, "/")
+  
+  # Create multipart request
+  request <- POST(upload_url,
+                  body = list(file = upload_file(package_path)),
+                  encode = "multipart")
+  
+  # Execute request
+  response <- content(request)
+  
+  # Check response
+  if (response$status_code == 201) {
+    cat("Package uploaded successfully.\n")
+  } else {
+    cat("Error uploading package:", response$status_code, "\n")
+  }
+}
+
+# Usage
+package_name <- "YourPackageName"
+nexus_url <- "http://your-nexus-url.com"
+nexus_repository <- "your-repository-name"
+
+download_and_upload_to_nexus(package_name, nexus_url, nexus_repository)
+
+
+c==========
 
 library(httr)
 
